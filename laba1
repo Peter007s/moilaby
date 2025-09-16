@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main()
+{
+  cout << "Input x, k" << endl;
+  long double x;
+  int k;
+  cin >> x >> k;
+  long double ans = 0, cur_val = x;
+  int i = 2;
+  while(cur_val >= pow(10, -k))
+  {
+      ans += cur_val;
+      cur_val *= x * x / i / (i + 1);
+      i += 2;
+  }
+  cout << fixed << setprecision(k);
+  cout << "ch(x) = " << ans << endl;
+}
